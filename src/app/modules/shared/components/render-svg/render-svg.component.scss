@@ -1,0 +1,9 @@
+/*
+** Sucede que los SVG que he guardado provienen de: http://delacruz.edu.pe/assets/images/illustrations/components/ 
+** y por defecto vienen de otro color, asi que para que peguen con el blanco/negro theme he utlizado la property filter
+** para que no afecte a los colores del sitio (y)
+*/
+
+img {
+  filter: grayscale(100%);
+}
