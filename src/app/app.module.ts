@@ -10,6 +10,8 @@ import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { metaReducers, reducers } from './store/reducers';
 import { SharedModule } from './modules/shared/shared.module';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { SharedModule } from './modules/shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
