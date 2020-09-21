@@ -4,6 +4,9 @@ import { HomeOutletLayoutComponent } from './home-outlet-layout/home-outlet-layo
 import { HomeLayoutComponent } from './home-layout/home-layout.component';
 import { GetStartLayoutComponent } from './get-start-layout/get-start-layout.component';
 import { AboutUsLayoutComponent } from './about-us-layout/about-us-layout.component';
+import { ApplicationLayoutComponent } from './application-layout/application-layout.component';
+import { ContactLayoutComponent } from './contact-layout/contact-layout.component';
+
 
 const routes: Routes = [
   {
@@ -21,6 +24,14 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutUsLayoutComponent
+      },
+      {
+        path: 'app',
+        component: ApplicationLayoutComponent
+      },
+      {
+        path: 'contact',
+        component: ContactLayoutComponent
       }
     ]
   }

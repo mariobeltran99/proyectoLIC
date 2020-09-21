@@ -12,6 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { AboutUsLayoutComponent } from './about-us-layout/about-us-layout.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ApplicationLayoutComponent } from './application-layout/application-layout.component';
+import { ContactLayoutComponent } from './contact-layout/contact-layout.component';
+import { CreatorsComponent } from './creators/creators.component';
 
 const components = [
   HomeLayoutComponent,
@@ -25,12 +29,16 @@ const materialImports = [
   MatIconModule,
   MatButtonModule,
   MatGridListModule,
-  MatDividerModule
+  MatDividerModule,
+  MatSidenavModule
 ];
 
 @NgModule({
   declarations: [
-    ...components
+    ...components,
+    ApplicationLayoutComponent,
+    ContactLayoutComponent,
+    CreatorsComponent
   ],
   imports: [
     CommonModule,
