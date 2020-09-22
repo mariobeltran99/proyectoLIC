@@ -12,7 +12,7 @@ export class DevelopersService {
   ) { }
 
   getDeveloper(): Observable<Developers> {
-    return this.httpClient.get<Developers>('http://localhost:3000/dev');
+    return this.httpClient.get<Developers>('http://localhost:3000/devs');
   }
 }
 
