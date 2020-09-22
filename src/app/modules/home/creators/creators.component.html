@@ -1,5 +1,7 @@
 <p>
-    {{ dev.name }} <br>
-    {{ dev.description }} <br>
-    <img src="{{ dev.photo }}" alt="" srcset="" width="30" height="30">
+    <mat-card>
+        <span class="span-name">{{ dev.name }}</span> <br>
+        <span class="span-desc">{{ dev.description }}</span> <br>
+        <img src="{{ dev.photo }}" alt="" srcset="" width="100" height="100">
+    </mat-card>
 </p>

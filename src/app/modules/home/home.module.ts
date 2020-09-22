@@ -18,7 +18,7 @@ import { ContactLayoutComponent } from './contact-layout/contact-layout.componen
 import { CreatorsComponent } from './creators/creators.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatCardModule } from '@angular/material/card';
 
 
 const components = [
@@ -27,7 +27,8 @@ const components = [
   HomeOutletLayoutComponent,
   AboutUsLayoutComponent,
   ContactLayoutComponent,
-  ApplicationLayoutComponent
+  ApplicationLayoutComponent,
+  CreatorsComponent
 ];
 
 const materialImports = [
@@ -38,7 +39,8 @@ const materialImports = [
   MatDividerModule,
   MatSidenavModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatCardModule
 ];
 
 @NgModule({
@@ -46,7 +48,7 @@ const materialImports = [
     ...components,
     ApplicationLayoutComponent,
     ContactLayoutComponent,
-    CreatorsComponent
+    CreatorsComponent,
   ],
   imports: [
     CommonModule,
