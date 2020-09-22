@@ -19,6 +19,7 @@ import { CreatorsComponent } from './creators/creators.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const components = [
@@ -54,7 +55,8 @@ const materialImports = [
     CommonModule,
     HomeRoutingModule,
     ...materialImports,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
 
   ]
 })
