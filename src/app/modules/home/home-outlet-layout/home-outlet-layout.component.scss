@@ -4,17 +4,24 @@
 .get-started-btn, .about-us-btn, .app-btn, .contact-btn {
   margin-right: 10px;
 }
+.get-started-r, .about-us-r, .app-r, .contact-r {
+  margin: 1%;
+}
 
 .toolbar-custom-size {
   height: $toolbar-height;
 }
 
-@media only screen and (max-width: 400px) {
-  .get-started-btn {
+@media screen and (max-width: 600px) {
+  .get-started-btn, .about-us-btn, .app-btn, .contact-btn {
     display: none;
   }
 }
-
+@media screen and (min-width: 600px) {
+  .get-started-r, .about-us-r, .app-r, .contact-r {
+    display: none;
+  }
+}
 .entity-name {
   cursor: pointer;
 }
