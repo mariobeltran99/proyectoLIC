@@ -1,1 +1,29 @@
-<p>contact-layout works!</p>
+<div class="home-container">
+    <div class="home-content">
+        <form>
+            <p>
+                <mat-form-field appearance="legacy" class="input-name">
+                    <mat-label>Nombre de contacto</mat-label>
+                    <input matInput placeholder="Por favor ingrese su nombre" required>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="legacy" class="input-email">
+                    <mat-label>Correo de contacto</mat-label>
+                    <input matInput placeholder="Por favor ingrese su correo" type="email" required>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="legacy" class="input-mensaje">
+                    <mat-label>Mensaje</mat-label>
+                    <input matInput placeholder="Por favor ingrese su mensaje" required>
+                </mat-form-field>
+            </p>
+            <p>
+                <button mat-stroked-button class="contact-btn" (click)="auth()" type="submit">
+                    <span>Enviar</span>
+                </button>
+            </p>
+        </form>
+    </div>
+</div>
