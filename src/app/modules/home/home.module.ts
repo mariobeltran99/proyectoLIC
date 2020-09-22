@@ -16,12 +16,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ApplicationLayoutComponent } from './application-layout/application-layout.component';
 import { ContactLayoutComponent } from './contact-layout/contact-layout.component';
 import { CreatorsComponent } from './creators/creators.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 const components = [
   HomeLayoutComponent,
   GetStartLayoutComponent,
   HomeOutletLayoutComponent,
-  AboutUsLayoutComponent
+  AboutUsLayoutComponent,
+  ContactLayoutComponent,
+  ApplicationLayoutComponent
 ];
 
 const materialImports = [
@@ -30,7 +34,9 @@ const materialImports = [
   MatButtonModule,
   MatGridListModule,
   MatDividerModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatFormFieldModule,
+  MatInputModule
 ];
 
 @NgModule({

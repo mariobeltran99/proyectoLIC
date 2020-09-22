@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ContactLayoutComponent implements OnInit {
 
   constructor() { }
+  auth(params: void) {
+    alert("holi");
+  }
 
   ngOnInit(): void {
   }
+
 
 }
