@@ -37,7 +37,8 @@ export class ContactLayoutComponent implements OnInit {
     });
   }
   send() {
-    alert('Gracias por contantarnos');
+    alert('Gracias por contáctarnos');
+    this.resetContactForm();
   }
   isFieldValid1(field: string) {
     const contact = this.contactForm.get(field);
@@ -74,5 +75,11 @@ export class ContactLayoutComponent implements OnInit {
         break;
     }
     return message;
+  }
+  resetContactForm(){
+    this.contactForm.reset();
+    Object.keys(this.contactForm.controls).forEach((key) => {
+      this.contactForm.controls[key].setErrors(null);
+    });
   }
 }
