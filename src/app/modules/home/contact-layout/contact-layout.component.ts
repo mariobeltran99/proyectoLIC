@@ -9,7 +9,7 @@ export class ContactLayoutComponent implements OnInit {
 
   constructor() { }
   auth(params: void) {
-    alert("holi");
+    alert("El correo ha sido enviada!");
   }
 
   ngOnInit(): void {

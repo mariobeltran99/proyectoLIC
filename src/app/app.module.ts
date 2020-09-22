@@ -11,7 +11,7 @@ import { CoreModule } from './modules/core/core.module';
 import { metaReducers, reducers } from './store/reducers';
 import { SharedModule } from './modules/shared/shared.module';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
