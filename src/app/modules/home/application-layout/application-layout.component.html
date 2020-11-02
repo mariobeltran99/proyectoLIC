@@ -1,1 +1,57 @@
-<p>application-layout works!</p>
+<button (click)="onClickPush('email')">Agregar email</button>
+<button (click)="onClickPush('text')">Agregar text</button>
+<button (click)="onClickPush('number')">Agregar number</button>
+<button (click)="onClickPush('checkbox')">Agregar checkbox</button>
+<button (click)="onClickPush('textarea')">Agregar textarea</button>
+<button (click)="onClickPush('file')">Agregar archivo</button>
+<button (click)="onClickPush('radio', ['Option 1', 'Option 2', 'Option 3'])">Agregar radio</button>
+<button (click)="onClickPush('select', ['Option 1', 'Option 2', 'Option 3'])">Agregar select</button>
+
+<h1>Forms</h1>
+<div *ngFor="let formGroup of getForms(); let i = index">
+  <b>Formulario #{{i}}</b>
+  <form [formGroup]="formGroup">
+    <div [ngSwitch]="typeGroups(formGroup?.value?.type)">
+      <ng-template [ngSwitchCase]="1">
+        <input [type]="formGroup?.value?.type" formControlName="value" />
+      </ng-template>
+      <ng-template [ngSwitchCase]="2">
+        <textarea formControlName="value"></textarea>
+      </ng-template>
+      <ng-template [ngSwitchCase]="3">
+        <div *ngFor="let option of formGroup?.value?.args">
+          <label>{{option}}</label>
+          <input
+            type="radio"
+            [id]="formGroup?.value?.name"
+            formControlName="value"
+            [value]="option"
+          />
+        </div>
+        <br />
+      </ng-template>
+      <ng-template [ngSwitchCase]="4">
+        <select formControlName="value">
+          <option
+            *ngFor="let option of formGroup?.value?.args" [value]="option" >
+            {{option}}
+          </option>
+        </select>
+        <br />
+      </ng-template>
+    </div>
+
+    <br />
+    Valid: {{ formGroup.valid }}, {{ formGroup.value | json }}
+  </form>
+  <br />
+  <button (click)="deleteForm(i)">
+    Delete form
+  </button>
+</div>
+
+<code>
+  {{ generateCode() || 'Nulo' }}
+</code>
+
+<br /><br />
