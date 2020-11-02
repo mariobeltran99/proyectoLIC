@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatSelectModule} from '@angular/material/select';
 
 const components = [
   HomeLayoutComponent,
@@ -42,7 +43,8 @@ const materialImports = [
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
-  MatChipsModule
+  MatChipsModule,
+  MatSelectModule
 ];
 
 @NgModule({

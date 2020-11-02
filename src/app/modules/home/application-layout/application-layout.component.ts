@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import { generateCode } from "./generate-code";
 
 
 type InputTypes = 'email' | 'text' | 'number' | 'checkbox' | 'radio' | 'textarea' | 'select' | 'file';
+interface opt {
+  name: string;
+}
 
 
 @Component({
@@ -15,7 +18,8 @@ export class ApplicationLayoutComponent implements OnInit {
   ngOnInit(): void {
   }
   formArray: FormArray;
-
+  selectP = new FormControl('', Validators.required);
+  
   constructor(private fb: FormBuilder) {
     this.formArray = this.fb.array([]);
   }
