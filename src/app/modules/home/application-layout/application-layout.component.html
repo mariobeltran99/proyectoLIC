@@ -1,13 +1,13 @@
-<button (click)="onClickPush('email')">Agregar email</button>
-<button (click)="onClickPush('text')">Agregar text</button>
-<button (click)="onClickPush('number')">Agregar number</button>
-<button (click)="onClickPush('checkbox')">Agregar checkbox</button>
-<button (click)="onClickPush('textarea')">Agregar textarea</button>
-<button (click)="onClickPush('file')">Agregar archivo</button>
-<button (click)="onClickPush('radio', ['Option 1', 'Option 2', 'Option 3'])">Agregar radio</button>
-<button (click)="onClickPush('select', ['Option 1', 'Option 2', 'Option 3'])">Agregar select</button>
-
-<h1>Forms</h1>
+ <br>
+<button (click)="onClickPush('email')">Agregar email</button> <br><br>
+<button (click)="onClickPush('text')">Agregar text</button> <br><br>
+<button (click)="onClickPush('number')">Agregar number</button> <br><br>
+<button (click)="onClickPush('checkbox')">Agregar checkbox</button> <br><br>
+<button (click)="onClickPush('textarea')">Agregar textarea</button> <br><br>
+<button (click)="onClickPush('file')">Agregar archivo</button> <br><br>
+<button (click)="onClickPush('radio', ['Option 1', 'Option 2', 'Option 3'])">Agregar radio</button> <br><br>
+<button (click)="onClickPush('select', ['Option 1', 'Option 2', 'Option 3'])">Agregar select</button> <br><br>
+<h1></h1>
 <div *ngFor="let formGroup of getForms(); let i = index">
   <b>Formulario #{{i}}</b>
   <form [formGroup]="formGroup">
@@ -49,9 +49,11 @@
     Delete form
   </button>
 </div>
-
-<code>
-  {{ generateCode() || 'Nulo' }}
-</code>
+<br><br> 
+<div class="codigo">
+  <code>
+    {{ generateCode() || 'Nulo' }}
+  </code>
+</div>
 
 <br /><br />

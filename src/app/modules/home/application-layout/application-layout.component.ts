@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { generateCode } from "./generate-code";
 
+
 type InputTypes = 'email' | 'text' | 'number' | 'checkbox' | 'radio' | 'textarea' | 'select' | 'file';
+
 
 @Component({
   selector: 'gf-application-layout',
@@ -18,14 +20,13 @@ export class ApplicationLayoutComponent implements OnInit {
     this.formArray = this.fb.array([]);
   }
 
-
   getFormGroup(inputType: InputTypes, args = []): FormGroup {
     const validators = this.getValidators(inputType, false, args);
     return this.fb.group({
       value: [null, [...validators]],
       type: [inputType],
       args: [args],
-      id: [`random_name_${Math.round(Math.random() * 100)}`]
+      id: [`random_name_${Math.round(Math.random() * 100)}`],
     });
   }
 
@@ -38,7 +39,7 @@ export class ApplicationLayoutComponent implements OnInit {
       ];
       case 'text': return [...requiredValidator];
       case 'number': {
-        const min = args[0] ?? 0;
+        const min = args[0] ?? (1e1000)*-1;
         const max = args[1] ?? 1e1000;
         return [
           Validators.pattern(`^[0-9]{1,}\$`),
@@ -71,7 +72,7 @@ export class ApplicationLayoutComponent implements OnInit {
   }
 
   generateCode(): string {
-    const code = generateCode(this.formArray ?? null, 2);
+    const code = generateCode(this.formArray ?? null, 1);
     return code;
   }
 
