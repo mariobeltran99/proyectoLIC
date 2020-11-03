@@ -52,7 +52,7 @@ export class ApplicationLayoutComponent implements OnInit {
       ];
       case 'text': return [...requiredValidator];
       case 'number': {
-        const min = args[0] ?? (1e1000) * -1;
+        const min = args[0] ?? 1e1000;
         const max = args[1] ?? 1e1000;
         return [
           Validators.pattern(`^[0-9]{1,}\$`),
