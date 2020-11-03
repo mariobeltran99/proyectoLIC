@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { generateCode } from "./generate-code";
 
 
@@ -15,11 +15,20 @@ interface opt {
   styleUrls: ['./application-layout.component.scss']
 })
 export class ApplicationLayoutComponent implements OnInit {
+  prob: FormGroup;
+  option: string;
   ngOnInit(): void {
+    this.prob = this.fb.group({
+      selectP: new FormControl(null)
+    });
+    this.prob.get("selectP").valueChanges.subscribe(res =>{
+      console.log(res);
+      this.option = res;
+    });
   }
   formArray: FormArray;
   selectP = new FormControl('', Validators.required);
-  
+
   constructor(private fb: FormBuilder) {
     this.formArray = this.fb.array([]);
   }
@@ -43,7 +52,7 @@ export class ApplicationLayoutComponent implements OnInit {
       ];
       case 'text': return [...requiredValidator];
       case 'number': {
-        const min = args[0] ?? (1e1000)*-1;
+        const min = args[0] ?? (1e1000) * -1;
         const max = args[1] ?? 1e1000;
         return [
           Validators.pattern(`^[0-9]{1,}\$`),
@@ -84,5 +93,5 @@ export class ApplicationLayoutComponent implements OnInit {
   deleteForm(index: number): void {
     this.formArray.removeAt(index);
   }
-  
+
 }

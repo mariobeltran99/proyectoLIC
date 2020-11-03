@@ -3,6 +3,7 @@
 .contact-btn{
     background-color: #3f51b5;
     color: #fefefe;
+    transform: scale(1.5);
 }
 .home-container {
   background-color: #fefefe;
@@ -16,7 +17,4 @@
 }
 .input-name, .input-email, .input-mensaje{
     width: 75%;
-}
-.contact-btn{
-    transform: scale(1.5);
 }

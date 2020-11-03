@@ -7,7 +7,6 @@ import { AboutUsLayoutComponent } from './about-us-layout/about-us-layout.compon
 import { ApplicationLayoutComponent } from './application-layout/application-layout.component';
 import { ContactLayoutComponent } from './contact-layout/contact-layout.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -32,7 +31,11 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactLayoutComponent
-      }
+      },
+      /* {
+        path: 'test',
+        component: FormRadioComponent
+      }*/
     ]
   }
 ];

@@ -25,6 +25,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormTextComponent } from './form-text/form-text.component';
 import { FormNumberComponent } from './form-number/form-number.component';
 import { FormRadioComponent } from './form-radio/form-radio.component';
+import { MatCheckboxModule } from '@angular/material/checkbox'; 
 
 const components = [
   HomeLayoutComponent,
@@ -50,7 +51,8 @@ const materialImports = [
   MatInputModule,
   MatCardModule,
   MatChipsModule,
-  MatSelectModule
+  MatSelectModule,
+  MatCheckboxModule,
 ];
 
 @NgModule({

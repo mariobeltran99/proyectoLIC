@@ -1,25 +1,33 @@
 <div class="home-container">
   <div class="home-content">
     <br><br>
-    <mat-form-field appearance="fill" class="selectP">
-      <mat-label>Elige tipo de componente a ingresar</mat-label>
-      <select matNativeControl required [formControl]="selectP">
-        <option value="text">Texto</option>
-        <option value="password">Contrase~a</option>
-        <option value="number">Número</option>
-        <option value="email">Correo electronico</option>
-        <option value="file">Archivo</option>
-        <option value="textarea">Area de texto</option>
-        <option value="check">Checkbox</option>
-        <option value="radio">Radiobutton</option>
-        <option value="select">Combobox</option>
-      </select>
-      <mat-error *ngIf="selectP.hasError('required')"> Elija una opción </mat-error>
-    </mat-form-field>
+    <form [formGroup]="prob">
+      <mat-form-field appearance="fill" class="selectP">
+        <mat-label>Elige tipo de componente a ingresar</mat-label>
+        <select matNativeControl required [formControl]="selectP" formControlName="selectP">
+          <option value="text">Texto</option>
+          <option value="password">Contraseña</option>
+          <option value="number">Número</option>
+          <option value="email">Correo electronico</option>
+          <option value="textarea">Area de texto</option>
+          <option value="check">Checkbox</option>
+          <option value="radio">Radiobutton</option>
+          <option value="select">Combobox</option>
+        </select>
+        <mat-error *ngIf="selectP.hasError('required')"> Elija una opción </mat-error>
+      </mat-form-field>
+    </form>
     <br>
-    <div>Aqui cargaria el componente</div>
-    <br>
-    <button class="boton">Insertar componente</button>
+    <div [ngSwitch]="option">
+      <gf-form-text *ngSwitchCase="'text' "></gf-form-text>
+      <gf-form-text *ngSwitchCase="'password' "></gf-form-text>
+      <gf-form-text *ngSwitchCase="'email' "></gf-form-text>
+      <gf-form-text *ngSwitchCase="'textarea' "></gf-form-text>
+      <gf-form-number *ngSwitchCase="'number'"></gf-form-number>
+      <gf-form-radio *ngSwitchCase="'radio'"></gf-form-radio>
+      <gf-form-radio *ngSwitchCase="'check'"></gf-form-radio>
+      <gf-form-radio *ngSwitchCase="'select'"></gf-form-radio>
+    </div>
     <div *ngFor="let formGroup of getForms(); let i = index">
       <b>Formulario #{{i}}</b>
       <form [formGroup]="formGroup">
