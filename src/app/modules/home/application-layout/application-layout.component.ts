@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { generateCode } from "./generate-code";
 
+
 type InputTypes = 'email' | 'text' | 'number' | 'checkbox' | 'radio' | 'textarea' | 'select' | 'file';
+interface opt {
+  name: string;
+}
+
 
 @Component({
   selector: 'gf-application-layout',
@@ -10,14 +15,23 @@ type InputTypes = 'email' | 'text' | 'number' | 'checkbox' | 'radio' | 'textarea
   styleUrls: ['./application-layout.component.scss']
 })
 export class ApplicationLayoutComponent implements OnInit {
+  prob: FormGroup;
+  option: string;
   ngOnInit(): void {
+    this.prob = this.fb.group({
+      selectP: new FormControl(null)
+    });
+    this.prob.get("selectP").valueChanges.subscribe(res =>{
+      console.log(res);
+      this.option = res;
+    });
   }
   formArray: FormArray;
+  selectP = new FormControl('', Validators.required);
 
   constructor(private fb: FormBuilder) {
     this.formArray = this.fb.array([]);
   }
-
 
   getFormGroup(inputType: InputTypes, args = []): FormGroup {
     const validators = this.getValidators(inputType, false, args);
@@ -25,7 +39,7 @@ export class ApplicationLayoutComponent implements OnInit {
       value: [null, [...validators]],
       type: [inputType],
       args: [args],
-      id: [`random_name_${Math.round(Math.random() * 100)}`]
+      id: [`random_name_${Math.round(Math.random() * 100)}`],
     });
   }
 
@@ -38,7 +52,7 @@ export class ApplicationLayoutComponent implements OnInit {
       ];
       case 'text': return [...requiredValidator];
       case 'number': {
-        const min = args[0] ?? 0;
+        const min = args[0] ?? 1e1000;
         const max = args[1] ?? 1e1000;
         return [
           Validators.pattern(`^[0-9]{1,}\$`),
@@ -71,7 +85,7 @@ export class ApplicationLayoutComponent implements OnInit {
   }
 
   generateCode(): string {
-    const code = generateCode(this.formArray ?? null, 2);
+    const code = generateCode(this.formArray ?? null, 1);
     return code;
   }
 
@@ -79,5 +93,5 @@ export class ApplicationLayoutComponent implements OnInit {
   deleteForm(index: number): void {
     this.formArray.removeAt(index);
   }
-  
+
 }

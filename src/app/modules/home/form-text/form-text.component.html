@@ -1,0 +1,28 @@
+<div class="home-container">
+    <form [formGroup]="lblreq">
+        <p>
+            <mat-form-field appearance="outline" class="input-label">
+                <mat-label>Nombre del label</mat-label>
+                <input matInput placeholder="Por favor ingrese el nombre del label" autocomplete="off"
+                    formControlName="label">
+                <mat-icon matSuffix>info</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" class="input-placeholder">
+                <mat-label>Texto del placeholder</mat-label>
+                <input matInput placeholder="Por favor ingrese el texto del placeholder" autocomplete="off"
+                    formControlName="placeholder">
+                <mat-icon matSuffix>text_format</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-checkbox class="example-margin" formControlName="required" color="primary">Elemento obligatorio</mat-checkbox>
+        </p>
+        <p>
+            <button mat-stroked-button class="lblreq-btn" type="submit" [disabled]="!lblreq.valid">
+                <span>Insertar</span>
+            </button>
+        </p>
+    </form>
+</div>

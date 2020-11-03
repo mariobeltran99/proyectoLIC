@@ -1,57 +1,75 @@
-<button (click)="onClickPush('email')">Agregar email</button>
-<button (click)="onClickPush('text')">Agregar text</button>
-<button (click)="onClickPush('number')">Agregar number</button>
-<button (click)="onClickPush('checkbox')">Agregar checkbox</button>
-<button (click)="onClickPush('textarea')">Agregar textarea</button>
-<button (click)="onClickPush('file')">Agregar archivo</button>
-<button (click)="onClickPush('radio', ['Option 1', 'Option 2', 'Option 3'])">Agregar radio</button>
-<button (click)="onClickPush('select', ['Option 1', 'Option 2', 'Option 3'])">Agregar select</button>
-
-<h1>Forms</h1>
-<div *ngFor="let formGroup of getForms(); let i = index">
-  <b>Formulario #{{i}}</b>
-  <form [formGroup]="formGroup">
-    <div [ngSwitch]="typeGroups(formGroup?.value?.type)">
-      <ng-template [ngSwitchCase]="1">
-        <input [type]="formGroup?.value?.type" formControlName="value" />
-      </ng-template>
-      <ng-template [ngSwitchCase]="2">
-        <textarea formControlName="value"></textarea>
-      </ng-template>
-      <ng-template [ngSwitchCase]="3">
-        <div *ngFor="let option of formGroup?.value?.args">
-          <label>{{option}}</label>
-          <input
-            type="radio"
-            [id]="formGroup?.value?.name"
-            formControlName="value"
-            [value]="option"
-          />
-        </div>
-        <br />
-      </ng-template>
-      <ng-template [ngSwitchCase]="4">
-        <select formControlName="value">
-          <option
-            *ngFor="let option of formGroup?.value?.args" [value]="option" >
-            {{option}}
-          </option>
+<div class="home-container">
+  <div class="home-content">
+    <br><br>
+    <form [formGroup]="prob">
+      <mat-form-field appearance="fill" class="selectP">
+        <mat-label>Elige tipo de componente a ingresar</mat-label>
+        <select matNativeControl required [formControl]="selectP" formControlName="selectP">
+          <option value="text">Texto</option>
+          <option value="password">Contraseña</option>
+          <option value="number">Número</option>
+          <option value="email">Correo electronico</option>
+          <option value="textarea">Area de texto</option>
+          <option value="check">Checkbox</option>
+          <option value="radio">Radiobutton</option>
+          <option value="select">Combobox</option>
         </select>
+        <mat-error *ngIf="selectP.hasError('required')"> Elija una opción </mat-error>
+      </mat-form-field>
+    </form>
+    <br>
+    <div [ngSwitch]="option">
+      <gf-form-text *ngSwitchCase="'text' "></gf-form-text>
+      <gf-form-text *ngSwitchCase="'password' "></gf-form-text>
+      <gf-form-text *ngSwitchCase="'email' "></gf-form-text>
+      <gf-form-text *ngSwitchCase="'textarea' "></gf-form-text>
+      <gf-form-number *ngSwitchCase="'number'"></gf-form-number>
+      <gf-form-radio *ngSwitchCase="'radio'"></gf-form-radio>
+      <gf-form-radio *ngSwitchCase="'check'"></gf-form-radio>
+      <gf-form-radio *ngSwitchCase="'select'"></gf-form-radio>
+    </div>
+    <div *ngFor="let formGroup of getForms(); let i = index">
+      <b>Formulario #{{i}}</b>
+      <form [formGroup]="formGroup">
+        <div [ngSwitch]="typeGroups(formGroup?.value?.type)">
+          <ng-template [ngSwitchCase]="1">
+            <input [type]="formGroup?.value?.type" formControlName="value" />
+          </ng-template>
+          <ng-template [ngSwitchCase]="2">
+            <textarea formControlName="value"></textarea>
+          </ng-template>
+          <ng-template [ngSwitchCase]="3">
+            <div *ngFor="let option of formGroup?.value?.args">
+              <label>{{option}}</label>
+              <input type="radio" [id]="formGroup?.value?.name" formControlName="value" [value]="option" />
+            </div>
+            <br />
+          </ng-template>
+          <ng-template [ngSwitchCase]="4">
+            <select formControlName="value">
+              <option *ngFor="let option of formGroup?.value?.args" [value]="option">
+                {{option}}
+              </option>
+            </select>
+            <br />
+          </ng-template>
+        </div>
+
         <br />
-      </ng-template>
+        Valid: {{ formGroup.valid }}, {{ formGroup.value | json }}
+      </form>
+      <br />
+      <button (click)="deleteForm(i)">
+        Delete form
+      </button>
+    </div>
+    <br><br>
+    <div class="codigo">
+      <code>
+    {{ generateCode() || 'Nulo' }}
+  </code>
     </div>
 
-    <br />
-    Valid: {{ formGroup.valid }}, {{ formGroup.value | json }}
-  </form>
-  <br />
-  <button (click)="deleteForm(i)">
-    Delete form
-  </button>
+    <br /><br />
+  </div>
 </div>
-
-<code>
-  {{ generateCode() || 'Nulo' }}
-</code>
-
-<br /><br />
