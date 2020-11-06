@@ -1,0 +1,25 @@
+<div class="code-container">
+  <div class="code-content">
+    <code>
+      {{ completeFormHtmlCode }}
+    </code>
+  </div>
+  <div class="theme-form">
+    <mat-form-field class="form-50" appearance="outline">
+      <mat-label>Form theme</mat-label>
+      <mat-select [formControl]="themeFormControl" (valueChange)="onThemeValueChanges($event)">
+        <mat-option *ngFor="let theme of themeOptions" [value]="theme">
+          {{theme.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="code-actions">
+    <button mat-raised-button (click)="preview()">
+      Preview
+    </button>
+    <button mat-raised-button color="primary" [cdkCopyToClipboard]="completeFormHtmlCode" (click)="copyClipboard()">
+      Copy to clipboard
+    </button>
+  </div>
+</div>

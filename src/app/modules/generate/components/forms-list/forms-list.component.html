@@ -1,0 +1,16 @@
+<div class="forms-list" *ngIf="formItems$ | async as formItems">
+  <mat-list *ngIf="formItems.length > 0; else noFormItems">
+    <mat-list-item *ngFor="let formItem of formItems">
+      <div mat-line>{{ formItem?.name }} ({{ formItem?.label }})</div>
+      <div mat-line>{{ formItem?.args }}</div>
+      <button mat-icon-button (click)="deleteElement(formItem.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+  <mfw-form-generate-code [formItems]="formItems"></mfw-form-generate-code>
+</div>
+
+<ng-template #noFormItems>
+  <span>No items yet</span>
+</ng-template>
