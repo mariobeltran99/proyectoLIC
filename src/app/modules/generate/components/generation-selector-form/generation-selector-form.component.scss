@@ -1,0 +1,25 @@
+button {
+  margin: 10px 10px 10px 0px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form-50 {
+  width: 50%;
+}
+
+.form-50 + .form-50 {
+  margin-left: 10px;
+}
+
+.form-row {
+  display: flex;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

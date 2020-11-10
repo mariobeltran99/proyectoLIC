@@ -1,0 +1,28 @@
+.code-container {
+  max-width: 500px;
+}
+
+.code-content {
+  background-color: #eee;
+  color: gray;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.code-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+
+  button {
+    margin-left: 10px;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.theme-form {
+  margin-top: 10px;
+}
