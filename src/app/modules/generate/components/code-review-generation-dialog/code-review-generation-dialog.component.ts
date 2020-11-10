@@ -39,7 +39,7 @@ export class CodeReviewGenerationDialogComponent implements OnInit {
 
   setAssetCSSTheme(theme: Theme): void {
     if (!!theme) {
-      const cssThemeUrl = `${location}/assets/${theme.urlAsset}`;
+      const cssThemeUrl = `${location.origin}/assets/${theme.urlAsset}`;
       this.cssAssetCodePlainText = `<link rel="stylesheet" href="${cssThemeUrl}">`;
     }
   }

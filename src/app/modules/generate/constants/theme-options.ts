@@ -10,6 +10,11 @@ const ThemeOptions: Theme[] = [
     id: 2,
     name: 'CSS Theme default 2',
     urlAsset: 'css/theme-default-2.css'
+  },
+  {
+    id: 2,
+    name: 'CSS Theme default 3',
+    urlAsset: 'css/theme-default-3.css'
   }
 ];
 
