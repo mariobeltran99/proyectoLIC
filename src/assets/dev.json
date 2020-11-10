@@ -3,27 +3,32 @@
         {
             "name": "Mario Josue Beltran Garcia ",
             "description": "Estudiante de LIC y DPS",
-            "photo": "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png"
+            "photo": "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png",
+            "github": "https://github.com/mariobeltran99"
         },
         {
             "name": "Fher Enrique Climaco Escamilla",
             "description": "Estudiante de LIC",
-            "photo": "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png"
+            "photo": "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png",
+            "github": "https://github.com/FherEnrique"
         },
         {
             "name": "Walter Ernesto Corpeño Parada ",
             "description": "Estudiante de LIC y trabajador de React",
-            "photo": "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png"
+            "photo": "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png",
+            "github": "https://github.com/WECP1999"
         },
         {
             "name": "Katherine Milagro Alfaro Rico.",
             "description": "Estudiante de LIC",
-            "photo": "https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1705/tuktukdesign170500023/77461811-mujer-usuario-icono-avatar-vector-de-perfil-avatar-pictograma-símbolo-de-la-ilustración.jpg?ver=6"
+            "photo": "https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1705/tuktukdesign170500023/77461811-mujer-usuario-icono-avatar-vector-de-perfil-avatar-pictograma-símbolo-de-la-ilustración.jpg?ver=6",
+            "github": "https://github.com/Kath001"
         },
         {
             "name": "Wilber Adonay Cruz Cruz",
             "description": "Estudiante de LIC",
-            "photo": "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png"
+            "photo": "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png",
+            "github": "https://github.com/WECP1999"
         }
     ]
 }
