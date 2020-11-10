@@ -49,7 +49,7 @@ export class CodeReviewGenerationDialogComponent implements OnInit {
   }
 
   copyClipboard(): void {
-    this.snackBar.open('Copied text', null, { duration: 3e3 });
+    this.snackBar.open('Texto copiado', null, { duration: 3e3 });
   }
 
   preview(): void {

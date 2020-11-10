@@ -1,3 +1,33 @@
-*{
+body{
     background-color: black;
+}
+label{
+    color: white;
+}
+input,textarea {
+    outline: none;
+    background-color: black;
+    border: 0;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    color: white;
+}
+.form-actions{
+    text-align: center;
+    margin-top: 3%;
+}
+.form-item{
+    margin-top: 1%;
+}
+input[type="checkbox"]{
+    width: 2% !important;
+}
+button{
+    font-size:100%;
+    font-weight:bold;
+    color:white;
+    background:#696969;
+    border:0px;
+    width:80%;
+    height:50px;
 }

@@ -1,30 +1,30 @@
 <form [formGroup]="generationSelectorForm">
   <div class="form-row">
     <mat-form-field appearance="outline" class="form-50">
-      <mat-label>Form item label</mat-label>
+      <mat-label>Label para el elemento</mat-label>
       <input formControlName="label" matInput/>
-      <mat-error *ngIf="hasError('label', 'required')">Label is required</mat-error>
+      <mat-error *ngIf="hasError('label', 'required')">Nombre es obligatorio</mat-error>
     </mat-form-field>
   
     <mat-form-field class="form-50" appearance="outline">
-      <mat-label>Form type</mat-label>
+      <mat-label>Tipo de elemento</mat-label>
       <mat-select formControlName="formType">
         <mat-option *ngFor="let formTypeOption of formTypeOptions" [value]="formTypeOption">
           {{formTypeOption.name}}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="hasError('formType', 'required')">Form type is required</mat-error>
+      <mat-error *ngIf="hasError('formType', 'required')">Tipo de elemento es obligatorio</mat-error>
     </mat-form-field>
   </div>
 
   <mat-form-field appearance="outline">
-    <mat-label>Input properties</mat-label>
+    <mat-label>Propiedad del elemento (pueden ser estilos personalizados, max min en caso de number, placeholder, etc)</mat-label>
     <textarea formControlName="args" matInput></textarea>
   </mat-form-field>
 
   <div class="actions">
     <button mat-stroked-button color="primary" (click)="addFormItem()">
-      Add form item
+      Añadir elemento
     </button>
   </div>
 </form>

@@ -6,7 +6,7 @@
   </div>
   <div class="theme-form">
     <mat-form-field class="form-50" appearance="outline">
-      <mat-label>Form theme</mat-label>
+      <mat-label>Tema del formulario</mat-label>
       <mat-select [formControl]="themeFormControl" (valueChange)="onThemeValueChanges($event)">
         <mat-option *ngFor="let theme of themeOptions" [value]="theme">
           {{theme.name}}
@@ -16,10 +16,10 @@
   </div>
   <div class="code-actions">
     <button mat-raised-button (click)="preview()">
-      Preview
+      Vista previa
     </button>
     <button mat-raised-button color="primary" [cdkCopyToClipboard]="completeFormHtmlCode" (click)="copyClipboard()">
-      Copy to clipboard
+      Copiar al portapapeles
     </button>
   </div>
 </div>

@@ -4,7 +4,7 @@
       <div mat-line>{{ formItem?.name }} ({{ formItem?.label }})</div>
       <div mat-line>{{ formItem?.args }}</div>
       <button mat-icon-button (click)="deleteElement(formItem.id)">
-        <mat-icon>delete</mat-icon>
+        <mat-icon class="mat">delete</mat-icon>
       </button>
     </mat-list-item>
   </mat-list>
@@ -12,5 +12,5 @@
 </div>
 
 <ng-template #noFormItems>
-  <span>No items yet</span>
+  <span>No hay items</span>
 </ng-template>

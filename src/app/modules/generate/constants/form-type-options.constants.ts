@@ -4,17 +4,17 @@ import { FormTypeOption } from '../interfaces/form-type-option';
 const FormTypeOptionsConstant: FormTypeOption[] = [
   {
     id: 1,
-    name: 'Text field',
+    name: 'Tipo text',
     type: FormTypes.TEXT
   },
   {
     id: 2,
-    name: 'Text area (large text box)',
+    name: 'Textarea',
     type: FormTypes.TEXTAREA
   },
   {
     id: 3,
-    name: 'Email field',
+    name: 'Tipo email',
     type: FormTypes.EMAIL
   },
   {
@@ -24,12 +24,12 @@ const FormTypeOptionsConstant: FormTypeOption[] = [
   },
   {
     id: 5,
-    name: 'Password field',
+    name: 'Tipo contraseña',
     type: FormTypes.PASSWORD
   },
   {
     id: 6,
-    name: 'Number field',
+    name: 'Tipo numero',
     type: FormTypes.NUMBER
   }
 ];
