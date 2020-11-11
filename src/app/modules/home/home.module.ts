@@ -20,10 +20,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatSelectModule} from '@angular/material/select';
-import { MatCheckboxModule } from '@angular/material/checkbox'; 
+import { MatChipsModule } from '@angular/material/chips';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MfwGenerateModule } from '../generate/generate.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const components = [
   HomeLayoutComponent,
@@ -48,6 +49,7 @@ const materialImports = [
   MatChipsModule,
   MatSelectModule,
   MatCheckboxModule,
+  MatSnackBarModule
 ];
 
 @NgModule({
@@ -63,8 +65,7 @@ const materialImports = [
     ...materialImports,
     SharedModule,
     ReactiveFormsModule,
-    MfwGenerateModule
-
-  ]
+    MfwGenerateModule,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

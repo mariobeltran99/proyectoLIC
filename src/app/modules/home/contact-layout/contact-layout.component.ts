@@ -3,19 +3,24 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  Validators
+  Validators,
 } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'gf-contact-layout',
   templateUrl: './contact-layout.component.html',
-  styleUrls: ['./contact-layout.component.scss']
+  styleUrls: ['./contact-layout.component.scss'],
 })
 export class ContactLayoutComponent implements OnInit {
   contactForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
-
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  constructor(private fb: FormBuilder, private snack: MatSnackBar) {}
 
   ngOnInit() {
     this.contactForm = this.fb.group({
@@ -32,13 +37,20 @@ export class ContactLayoutComponent implements OnInit {
       message: new FormControl(null, [
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(100)
+        Validators.maxLength(100),
       ]),
     });
   }
   send() {
-    alert('Gracias por contáctarnos');
+    this.openSnackBar();
     this.resetContactForm();
+  }
+  openSnackBar() {
+    this.snack.open('¡Gracias por tu mensaje!', 'X', {
+      duration: 6000,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
   }
   isFieldValid1(field: string) {
     const contact = this.contactForm.get(field);
@@ -76,7 +88,7 @@ export class ContactLayoutComponent implements OnInit {
     }
     return message;
   }
-  resetContactForm(){
+  resetContactForm() {
     this.contactForm.reset();
     Object.keys(this.contactForm.controls).forEach((key) => {
       this.contactForm.controls[key].setErrors(null);

@@ -35,10 +35,15 @@ export class GenerationSelectorFormComponent {
         ...formType, args, label,
         id: Math.round(Math.random() * 1e6)
       });
-      this.generationSelectorForm.reset();
+      this.resetGenerationSelectorForm();
     }
   }
-
+  resetGenerationSelectorForm() {
+    this.generationSelectorForm.reset();
+    Object.keys(this.generationSelectorForm.controls).forEach((key) => {
+      this.generationSelectorForm.controls[key].setErrors(null);
+    });
+  }
   hasError(controlName: string, errorName: string): boolean {
     return this.generationSelectorForm.get(controlName)?.hasError(errorName);
   }
