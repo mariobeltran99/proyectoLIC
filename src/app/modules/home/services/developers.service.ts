@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,10 +11,9 @@ export class DevelopersService {
   ) { }
 
   getDeveloper(): Observable<Developers> {
-    return this.httpClient.get<Developers>('http://localhost:3000/dev');
+    return this.httpClient.get<Developers>('https://chuson-b.herokuapp.com/api/v1/auth/devs');
   }
 }
-
 
 interface Developers {
   name: string;

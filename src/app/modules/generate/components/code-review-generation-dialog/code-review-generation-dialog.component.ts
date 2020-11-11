@@ -53,7 +53,7 @@ export class CodeReviewGenerationDialogComponent implements OnInit {
   }
 
   preview(): void {
-    sessionStorage.setItem('formCode', this.htmlCodePlainText);
+    sessionStorage.setItem('formCode', this.completeFormHtmlCode);
     location.href = `${location.origin}/assets/preview/`;
   }
 }

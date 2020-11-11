@@ -1,34 +1,63 @@
-body{
-    background-color: white;
+:root {
+  --input-border-color: gray;
+  --input-background-color: white;
+  --label-color: #464646;
+  --form-body-background: white;
+  --button-submit-background: #363636;
+  --button-submit-color: white;
 }
-input,textarea {
-    outline: none;
-    background-color: white;
-    border: 0;
-    width: 100%;
-    border-bottom: 1px solid #000;
+
+.form-body {
+  padding: 10px;
+  margin: 15px;
+  background-color: var(--form-body-background);
+  border-radius: 10px;
 }
-.form-actions{
-    text-align: center;
-    margin-top: 3%;
+
+div.form-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: transparent;
 }
-.form-item{
-    margin-top: 1%;
+
+div.form-item label {
+  display: block;
+  font-family: arial;
+  color: var(--label-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 15px;
+  font-size: 0.7em;
+  font-weight: bold;
 }
-input[type="checkbox"]{
-    width: 2% !important;
+
+input[mfw-form-input-type],
+textarea[mfw-form-textarea-type] {
+  padding: 10px;
+  border: 2px solid var(--input-border-color);
+  outline-style: none;
+  border-radius: 5px;
+  width: 100%;
+  background-color: var(--input-background-color);
 }
-button{
-    background:#7f8c8d;
-	color:#fff;
-	display:inline-block;
-	font-size:1.25em;
-	margin:20px;
-	padding:10px 0;
-	text-align:center;
-	width:200px;
-	text-decoration:none;
-    box-shadow:0px 3px 0px #373c3c;
-    width:350px;
-    border-radius:50px;
+
+div.form-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+button[mfw-form-submit] {
+  outline-style: none;
+  background-color: var(--button-submit-background);
+  color: var(--button-submit-color);
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-style: none;
+  cursor: pointer;
 }
