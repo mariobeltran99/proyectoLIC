@@ -39,7 +39,7 @@ export class CodeReviewGenerationDialogComponent implements OnInit {
 
   setAssetCSSTheme(theme: Theme): void {
     if (!!theme) {
-      const cssThemeUrl = `${location}/assets/${theme.urlAsset}`;
+      const cssThemeUrl = `${location.origin}/assets/${theme.urlAsset}`;
       this.cssAssetCodePlainText = `<link rel="stylesheet" href="${cssThemeUrl}">`;
     }
   }
@@ -49,7 +49,7 @@ export class CodeReviewGenerationDialogComponent implements OnInit {
   }
 
   copyClipboard(): void {
-    this.snackBar.open('Copied text', null, { duration: 3e3 });
+    this.snackBar.open('Texto copiado', null, { duration: 3e3 });
   }
 
   preview(): void {
